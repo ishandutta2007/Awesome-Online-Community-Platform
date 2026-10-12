@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background:#0b0f19; border-radius:12px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+
+    <!-- Glowing Accent Gradient -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes pulseOrb {
+        0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.35; }
+        50% { transform: scale(1.15) translate(20px, -15px); opacity: 0.6; }
+      }
+      @keyframes floatCard1 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes floatCard2 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(8px); }
+      }
+      @keyframes flowDash {
+        to { stroke-dashoffset: -40; }
+      }
+      .orb-1 {
+        transform-origin: 200px 100px;
+        animation: pulseOrb 8s ease-in-out infinite alternate;
+      }
+      .orb-2 {
+        transform-origin: 1000px 260px;
+        animation: pulseOrb 10s ease-in-out infinite alternate-reverse;
+      }
+      .float-1 {
+        animation: floatCard1 6s ease-in-out infinite;
+      }
+      .float-2 {
+        animation: floatCard2 7s ease-in-out infinite;
+      }
+      .network-line {
+        stroke-dasharray: 6 6;
+        animation: flowDash 3s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <g opacity="0.4">
+    <circle class="orb-1" cx="220" cy="90" r="140" fill="#6366f1" filter="url(#glow)"/>
+    <circle class="orb-2" cx="980" cy="270" r="160" fill="#ec4899" filter="url(#glow)"/>
+    <circle cx="600" cy="180" r="110" fill="#8b5cf6" filter="url(#glow)" opacity="0.25"/>
+  </g>
+
+  <!-- Network Graphic Flow / Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.08" stroke-width="1">
+    <line x1="0" y1="90" x2="1200" y2="90"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="300" y1="0" x2="300" y2="360"/>
+    <line x1="600" y1="0" x2="600" y2="360"/>
+    <line x1="900" y1="0" x2="900" y2="360"/>
+  </g>
+
+  <!-- Dynamic Animated Data Connections -->
+  <g class="network-line" stroke="url(#primaryGrad)" stroke-width="2" fill="none" opacity="0.45">
+    <path d="M 120 180 Q 300 80 500 130 T 900 110 T 1100 220" />
+    <path d="M 100 260 Q 400 320 650 250 T 1080 270" />
+  </g>
+
+  <!-- Background Floating Decorative Community Badges/Cards (Behind text) -->
+  <g class="float-1" opacity="0.6">
+    <rect x="70" y="45" width="160" height="42" rx="21" fill="url(#cardGrad)" stroke="#6366f1" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="92" cy="66" r="6" fill="#10b981"/>
+    <text x="108" y="71" fill="#cbd5e1" font-size="13" font-weight="600">💬 Discussion Forums</text>
+  </g>
+
+  <g class="float-2" opacity="0.6">
+    <rect x="970" y="55" width="165" height="42" rx="21" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="992" cy="76" r="6" fill="#ec4899"/>
+    <text x="1008" y="81" fill="#cbd5e1" font-size="13" font-weight="600">🌐 Fediverse &amp; Social</text>
+  </g>
+
+  <g class="float-1" opacity="0.5">
+    <rect x="90" y="275" width="160" height="42" rx="21" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="112" cy="296" r="6" fill="#38bdf8"/>
+    <text x="128" y="301" fill="#cbd5e1" font-size="13" font-weight="600">⚡ Open Source Stack</text>
+  </g>
+
+  <g class="float-2" opacity="0.5">
+    <rect x="950" y="270" width="180" height="42" rx="21" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="972" cy="291" r="6" fill="#f59e0b"/>
+    <text x="988" y="296" fill="#cbd5e1" font-size="13" font-weight="600">🚀 Enterprise SaaS</text>
+  </g>
+
+  <!-- Foreground Main Content Container (Guaranteed visible and centered) -->
+  <g text-anchor="middle">
+    <!-- Category Pill -->
+    <rect x="460" y="52" width="280" height="34" rx="17" fill="#6366f1" fill-opacity="0.18" stroke="#818cf8" stroke-width="1.2"/>
+    <text x="600" y="74" fill="#a5b4fc" font-size="13" font-weight="700" letter-spacing="1.5">CURATED ECOSYSTEM 2026</text>
+
+    <!-- Main Title -->
+    <text x="600" y="148" fill="#ffffff" font-size="44" font-weight="800" letter-spacing="-0.5">Awesome Online Community Platform</text>
+    
+    <!-- Gradient Bar / Divider -->
+    <rect x="475" y="172" width="250" height="4" rx="2" fill="url(#primaryGrad)"/>
+
+    <!-- Subtitle -->
+    <text x="600" y="215" fill="#94a3b8" font-size="18" font-weight="500">
+      The Comprehensive Landscape of SaaS Platforms &amp; Open-Source Community Engines
+    </text>
+
+    <!-- Features Subtitle / Tags -->
+    <text x="600" y="250" fill="#64748b" font-size="14" font-weight="500">
+      Forums • Social Intranets • Federated Networks • Member Hubs • Knowledge Bases
+    </text>
+  </g>
+</svg>
